@@ -4,10 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+  batch: true
+  branches:
+    include:
+    - master
+    - develop
 
 pool:
-  vmImage: ubuntu-latest
+  name: "agent-pool-aws-ec2"
+  vmImage: 
 
 steps:
 - task: Maven@3
