@@ -44,3 +44,6 @@ steps:
       ls
       echo "------------ ls target -------------"
       ls ./target
+
+- script: ansible-playbook ./playbook.yaml  -i ./inventory.ini
+  displayName: "ansible-playbook ./playbook.yaml  -i ./inventory.ini"
