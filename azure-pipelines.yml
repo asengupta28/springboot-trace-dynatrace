@@ -1,7 +1,3 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
   batch: true
@@ -20,19 +16,11 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      arguments: pth=$(System.DefaultWorkingDirectory)
+      #pth=$(System.DefaultWorkingDirectory)
       pwd
+      ls
       #echo "Target path: " $pth
       #cd $pth
-      ls
-      arguments: pth=$(System.DefaultWorkingDirectory)/$(appdir)
-      echo "Target path: " $pth
-      cd $pth
-      ls
-      arguments: pth=$(System.DefaultWorkingDirectory)/$(appdir)/target
-      echo "Target path: " $pth
-      cd $pth
-      ls
       
 - task: Maven@3
   inputs:
@@ -50,16 +38,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      arguments: pth=$(System.DefaultWorkingDirectory)
+      #pth=$(System.DefaultWorkingDirectory)
       pwd
-      #echo "Target path: " $pth
-      #cd $pth
       ls
-      arguments: pth=$(System.DefaultWorkingDirectory)/$(appdir)
-      echo "Target path: " $pth
-      cd $pth
-      ls
-      arguments: pth=$(System.DefaultWorkingDirectory)/$(appdir)/target
-      echo "Target path: " $pth
-      cd $pth
-      ls
+      echo "------------ ls target -------------"
+      ls ./target
