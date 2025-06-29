@@ -1,0 +1,17 @@
+- name: My first play
+  hosts: myhosts2
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world
+
+   - name: Delete a file
+     #ansible.builtin.file:
+       #state: absent
+       #path: /home/ec2-user/avijit/inventory.ini
+     ansible.builtin.shell:
+       chdir: /home/ec2-user/avijit
+       cmd: rm /home/ec2-user/avijit/inventory.ini
