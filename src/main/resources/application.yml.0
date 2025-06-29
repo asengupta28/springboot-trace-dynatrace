@@ -1,0 +1,13 @@
+server:
+ port: 9999
+
+management:
+  metrics:
+    export:
+      dynatrace:
+        v2:
+          metric-key-prefix: "service.component"
+          enrich-with-dynatrace-metadata: true
+          default-dimensions:
+            stack: "prod"
+            region: "us-east-1"
