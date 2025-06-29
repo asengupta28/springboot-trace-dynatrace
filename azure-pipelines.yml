@@ -20,7 +20,7 @@ steps:
       pwd
       pth=$(System.DefaultWorkingDirectory)
       ls
-      echo "Target path: " $pth
+      echo "Cd path: " $pth
       cd $pth
       ls
 - task: Maven@3
