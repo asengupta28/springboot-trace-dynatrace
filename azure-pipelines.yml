@@ -17,12 +17,12 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      #pth=$(System.DefaultWorkingDirectory)
       pwd
+      pth=$(System.DefaultWorkingDirectory)
       ls
-      #echo "Target path: " $pth
-      #cd $pth
-      
+      echo "Target path: " $pth
+      cd $pth
+      ls
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -39,11 +39,19 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      #pth=$(System.DefaultWorkingDirectory)
       pwd
+      pth=$(System.DefaultWorkingDirectory)
+      ls
+      echo "Cd path: " $pth
+      cd $pth
       ls
       echo "------------ ls target -------------"
-      ls ./target
+      pwd
+      pth=$(System.DefaultWorkingDirectory)/target
+      ls
+      echo "Target path: " $pth
+      cd $pth
+      ls
 
 - script: ansible-playbook ./playbook.yaml  -i ./inventory.ini
   displayName: "ansible-playbook ./playbook.yaml  -i ./inventory.ini"
