@@ -75,11 +75,11 @@ steps:
 #       sudo yum install python
 
 - task: Bash@3
-  displayName: 'Install pip with python get-pip.py'
+  displayName: 'Install pip with sudo yum install python3-pip'
   inputs:
     targetType: 'inline'
     script: |
-      python3 get-pip.py
+      sudo yum install python3-pip
 
 # - script: pip install ansible[azure]
 #   displayName: 'Install Ansible and the Azure modules'
