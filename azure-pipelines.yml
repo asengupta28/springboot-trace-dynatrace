@@ -67,14 +67,8 @@ steps:
 #     versionSpec: '3.13'
 #     architecture: 'x64'
 
-- task: UsePythonVersion@0
-  displayName: 'Install Python with UsePythonVersion@0'
-  inputs:
-    versionSpec: '3.12'
-    addToPath: true
-- script: |
-    python --version
-
+- script: sudo yum install python
+  displayName: 'Install Python with sudo yum install python'
 
 - task: Bash@3
   displayName: 'Install pip with python get-pip.py'
