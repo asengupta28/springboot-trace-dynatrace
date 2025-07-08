@@ -62,19 +62,20 @@ steps:
 #   displayName: 'Install Python packages'
 
 - task: UsePythonVersion@0
+  displayName: 'Install Python with UsePythonVersion@0'
   inputs:
     versionSpec: '3.9'
     architecture: 'x64'
 
 - task: Bash@3
+  displayName: 'Install pip with python get-pip.py'
   inputs:
     targetType: 'inline'
     script: |
       python get-pip.py
-  displayName: 'Install pip'
 
-- script: pip install ansible[azure]
-  displayName: 'Install Ansible and the Azure modules'
+# - script: pip install ansible[azure]
+#   displayName: 'Install Ansible and the Azure modules'
 
 - script: ansible-playbook ./playbook.yaml  -i ./inventory.ini
   displayName: "ansible-playbook ./playbook.yaml  -i ./inventory.ini"
