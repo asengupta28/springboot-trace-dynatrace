@@ -86,7 +86,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      pip install -y ansible
+      pip install ansible
 
 
 # - script: pip install ansible[azure]
