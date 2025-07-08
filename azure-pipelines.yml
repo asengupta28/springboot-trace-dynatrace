@@ -70,7 +70,7 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Install Python with UsePythonVersion@0'
   inputs:
-    versionSpec: '3.x'
+    versionSpec: '3.12'
     addToPath: true
 - script: |
     python --version
