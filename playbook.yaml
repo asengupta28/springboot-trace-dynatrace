@@ -13,7 +13,7 @@
     ansible.builtin.debug:
       msg: Hello world
 
-  THIS IS TO ADD A FILE IN A DIRECTORY ON THE TARGET HOST
+  # THIS IS TO ADD A FILE IN A DIRECTORY ON THE TARGET HOST
   - name: Add a file
     ansible.builtin.copy:
       src: ./inventory.ini
