@@ -42,7 +42,7 @@ steps:
       pwd
       pth=$(System.DefaultWorkingDirectory)
       ls
-      echo "Cd path: " $pth
+      echo "cd path: " $pth
       cd $pth
       ls
       echo "------------ ls target -------------"
