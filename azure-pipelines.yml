@@ -79,7 +79,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      python get-pip.py
+      python3 get-pip.py
 
 # - script: pip install ansible[azure]
 #   displayName: 'Install Ansible and the Azure modules'
