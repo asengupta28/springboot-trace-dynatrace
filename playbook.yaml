@@ -1,17 +1,32 @@
 - name: My first play
+  # PROVIDE HOST NAME CLASSIFIER THAT IS DEFINED IN THE "inventory.ini"
   hosts: myhosts2
+  # BELOW ARE PROVIDED LIST OF TASKS TO BE PERFORMED
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
 
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Hello world
+  # THIS IS TO SEND A PING ON THE TARGET HOST
+  - name: Ping my hosts
+    ansible.builtin.ping:
 
-   - name: Delete a file
-     #ansible.builtin.file:
-       #state: absent
-       #path: /home/ec2-user/avijit/inventory.ini
-     ansible.builtin.shell:
-       chdir: /home/ec2-user/avijit
-       cmd: rm /home/ec2-user/avijit/inventory.ini
+  # THIS IS TO PRINT A MESSAGE ON THE TARGET HOST
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Hello world
+
+  THIS IS TO ADD A FILE IN A DIRECTORY ON THE TARGET HOST
+  - name: Add a file
+    ansible.builtin.copy:
+      src: ./inventory.ini
+      dest: /home/ec2-user/avijit/inventory.ini
+
+  # THIS IS TO DELETE A FILE FROM DIRECTORY ON THE TARGET HOST
+  # - name: Delete a file using "Ansible Command"
+    # ansible.builtin.file:
+      # state: absent
+      # path: /home/ec2-user/avijit/inventory.ini
+
+  # THIS IS TO DELETE A FILE FROM DIRECTORY ON THE TARGET HOST
+  # - name: Delete a file using "Ansible Shell Command"
+    # ansible.builtin.shell:
+      # chdir: /home/ec2-user/avijit
+      # cmd: rm /home/ec2-user/avijit/inventory.ini
