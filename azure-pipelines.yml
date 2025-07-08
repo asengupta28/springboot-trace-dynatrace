@@ -80,7 +80,6 @@ steps:
     targetType: 'inline'
     script: |
       sudo yum -y install python3-pip
-      y
 
 # - script: pip install ansible[azure]
 #   displayName: 'Install Ansible and the Azure modules'
