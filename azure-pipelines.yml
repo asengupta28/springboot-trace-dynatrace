@@ -64,7 +64,7 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Install Python with UsePythonVersion@0'
   inputs:
-    versionSpec: '3.10'
+    versionSpec: '3.13'
     architecture: 'x64'
 
 - task: Bash@3
