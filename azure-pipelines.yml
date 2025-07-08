@@ -4,7 +4,6 @@ trigger:
   branches:
     include:
     - master
-    - develop
 
 pool:
   name: "Self-Hosted-LIN-Agent-Pool-Avijit"
