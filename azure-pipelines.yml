@@ -67,19 +67,19 @@ steps:
 #     versionSpec: '3.13'
 #     architecture: 'x64'
 
-# - task: Bash@3
-#   displayName: 'Install Python with sudo yum install python'
-#   inputs:
-#     targetType: 'inline'
-#     script: |
-#       sudo yum install python
+- task: Bash@3
+  displayName: 'Install Python with sudo yum install python'
+  inputs:
+    targetType: 'inline'
+    script: |
+      sudo yum -y install python
 
 - task: Bash@3
   displayName: 'Install pip with sudo yum install python3-pip'
   inputs:
     targetType: 'inline'
     script: |
-      sudo yum install python3-pip
+      sudo yum -y install python3-pip
       y
 
 # - script: pip install ansible[azure]
